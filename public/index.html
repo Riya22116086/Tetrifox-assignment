@@ -38,7 +38,7 @@
       formData.append("xmlfile", file);
 
       try {
-        const response = await fetch("http://localhost:3000/upload", {
+        const response = await fetch("https://tetrifox-assignment.onrender.com/upload", {
           method: "POST",
           body: formData
         });
