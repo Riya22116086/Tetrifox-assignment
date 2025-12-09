@@ -1,9 +1,11 @@
-🌐📦 ##Parcel Routing & Classification System
+🌐📦 **Parcel Routing & Classification System**
 
 A smart XML-based parcel analysis tool that classifies parcels, detects insurance needs, and provides automated routing recommendations.
 Built with Node.js, Express, and a clean web interface for file uploads and report downloads.
+**Link to run the website**
+https://tetrifox-assignment-1.onrender.com
 
-✨ ##Features
+✨ **Features**
 🔍 Smart Classification
 
 Automatically analyzes parcel XML data
@@ -14,7 +16,7 @@ Determines proper routing department
 
 Generates unique Parcel IDs
 
-📤 XML Upload Interface
+📤 **XML Upload Interface**
 <img width="988" height="840" alt="image" src="https://github.com/user-attachments/assets/3f0c088a-c69f-4870-9f6c-fc744f7de6f6" />
 
 
@@ -24,7 +26,7 @@ One-click XML upload
 
 Instant table preview
 
-<------📑 PDF Export----->
+<------**📑 PDF Export**----->
 
 Export full routing table as a professional PDF report
 
@@ -36,7 +38,7 @@ Classifies parcel objects using custom logic
 
 Secure file handling with multer
 
-<------🌐 API-Ready----->
+<------**🌐 API-Ready**----->
 
 Can be integrated with other logistics tools
 
@@ -49,7 +51,7 @@ Deployed endpoint available on Render
 | **Utilities**   | jsPDF, AutoTable         |
 | **Deployment**  | Render                   |
 
-🚀 How It Works
+🚀 **How It Works**
 1️⃣ Upload XML
 
 User selects an XML file containing parcels (with recipient, weight, value, etc.).
