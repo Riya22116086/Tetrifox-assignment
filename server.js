@@ -4,10 +4,12 @@ import path from "path";
 import fs from "fs";
 import { parseXML } from "./src/parser/xmlParser.js";
 import { classifyParcelObj } from "./src/routing/classifier.js";
+import cors from "cors";
+
 
 const app = express();
 app.use(express.static("public"));
-
+app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 // Setup multer to store uploaded files temporarily
