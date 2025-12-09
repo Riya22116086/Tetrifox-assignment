@@ -1,0 +1,195 @@
+[
+  {
+    "parcelId": "68465468-1",
+    "recipientName": "Vinny Gankema",
+    "weight": 0.02,
+    "value": 0,
+    "requiresInsurance": false,
+    "department": "Mail",
+    "routing": [
+      "Mail"
+    ]
+  },
+  {
+    "parcelId": "68465468-2",
+    "recipientName": "Soner Colen",
+    "weight": 2,
+    "value": 0,
+    "requiresInsurance": false,
+    "department": "Regular",
+    "routing": [
+      "Regular"
+    ]
+  },
+  {
+    "parcelId": "68465468-3",
+    "recipientName": "Ricardus Proper",
+    "weight": 100,
+    "value": 2000,
+    "requiresInsurance": true,
+    "department": "Heavy",
+    "routing": [
+      "Insurance",
+      "Heavy"
+    ]
+  },
+  {
+    "parcelId": "68465468-4",
+    "recipientName": "Alvaro ten Cate",
+    "weight": 11,
+    "value": 500,
+    "requiresInsurance": false,
+    "department": "Heavy",
+    "routing": [
+      "Heavy"
+    ]
+  },
+  {
+    "parcelId": "68465468-5",
+    "recipientName": "Roland Lubben",
+    "weight": 3,
+    "value": 0,
+    "requiresInsurance": false,
+    "department": "Regular",
+    "routing": [
+      "Regular"
+    ]
+  },
+  {
+    "parcelId": "68465468-6",
+    "recipientName": "Ninon Spanjersberg",
+    "weight": 10,
+    "value": 1500,
+    "requiresInsurance": true,
+    "department": "Regular",
+    "routing": [
+      "Insurance",
+      "Regular"
+    ]
+  },
+  {
+    "parcelId": "68465468-7",
+    "recipientName": "Ninon Spanjersberg",
+    "weight": 10,
+    "value": 1500,
+    "requiresInsurance": true,
+    "department": "Regular",
+    "routing": [
+      "Insurance",
+      "Regular"
+    ]
+  },
+  {
+    "parcelId": "68465468-8",
+    "recipientName": "Montana Martinus",
+    "weight": 0.7,
+    "value": 0,
+    "requiresInsurance": false,
+    "department": "Mail",
+    "routing": [
+      "Mail"
+    ]
+  },
+  {
+    "parcelId": "68465468-9",
+    "recipientName": "Aisling Kruizenga",
+    "weight": 0.9,
+    "value": 1100,
+    "requiresInsurance": true,
+    "department": "Mail",
+    "routing": [
+      "Insurance",
+      "Mail"
+    ]
+  },
+  {
+    "parcelId": "68465468-10",
+    "recipientName": "Bernadet Spijker",
+    "weight": 4.5,
+    "value": 0,
+    "requiresInsurance": false,
+    "department": "Regular",
+    "routing": [
+      "Regular"
+    ]
+  },
+  {
+    "parcelId": "68465468-11",
+    "recipientName": "Collin Slaman",
+    "weight": 120,
+    "value": 1500,
+    "requiresInsurance": true,
+    "department": "Heavy",
+    "routing": [
+      "Insurance",
+      "Heavy"
+    ]
+  },
+  {
+    "parcelId": "68465468-12",
+    "recipientName": "Collin Slaman",
+    "weight": 130,
+    "value": 2000,
+    "requiresInsurance": true,
+    "department": "Heavy",
+    "routing": [
+      "Insurance",
+      "Heavy"
+    ]
+  },
+  {
+    "parcelId": "68465468-13",
+    "recipientName": "Ingetje Hauwert",
+    "weight": 0.3,
+    "value": 0,
+    "requiresInsurance": false,
+    "department": "Mail",
+    "routing": [
+      "Mail"
+    ]
+  },
+  {
+    "parcelId": "68465468-14",
+    "recipientName": "Amber van der Schaar",
+    "weight": 1,
+    "value": 0,
+    "requiresInsurance": false,
+    "department": "Mail",
+    "routing": [
+      "Mail"
+    ]
+  },
+  {
+    "parcelId": "68465468-15",
+    "recipientName": "Willemtje Guldemond",
+    "weight": 15,
+    "value": 100,
+    "requiresInsurance": false,
+    "department": "Heavy",
+    "routing": [
+      "Heavy"
+    ]
+  },
+  {
+    "parcelId": "68465468-16",
+    "recipientName": "Willemtje Guldemond",
+    "weight": 15,
+    "value": 100,
+    "requiresInsurance": false,
+    "department": "Heavy",
+    "routing": [
+      "Heavy"
+    ]
+  },
+  {
+    "parcelId": "68465468-17",
+    "recipientName": "Zeki Soekhai",
+    "weight": 0.4,
+    "value": 0,
+    "requiresInsurance": false,
+    "department": "Mail",
+    "routing": [
+      "Mail"
+    ]
+  }
+]

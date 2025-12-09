@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parcel Routing</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+  <style>
+  table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+  th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+  th { background-color: #f2f2f2; }
+  tr.highlight { background-color: #ffdddd; font-weight: bold; } /* highlight high-value parcels */
+</style>
+
+</head>
+<body>
+  <h1>Parcel Routing Upload</h1>
+  <form id="uploadForm">
+    <input type="file" name="xmlfile" accept=".xml" required />
+    <button type="submit">Upload</button>
+  </form>
+
+  <div id="tableContainer"></div>
+  <button id="downloadBtn" style="display:none;">Download</button>
+
+
+  <script>
+    const form = document.getElementById("uploadForm");
+    const tableContainer = document.getElementById("tableContainer");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fileInput = form.querySelector("input[type=file]");
+      const file = fileInput.files[0];
+      if (!file) return alert("Please select an XML file");
+
+      const formData = new FormData();
+      formData.append("xmlfile", file);
+
+      try {
+        const response = await fetch("http://localhost:3000/upload", {
+          method: "POST",
+          body: formData
+        });
+        const json = await response.json();
+        renderTable(json);
+      } catch (err) {
+        console.error(err);
+        alert("Error uploading XML");
+      }
+    }
+);
+
+
+    function renderTable(data) {
+  if (!data.length) {
+    tableContainer.innerHTML = "<p>No parcels found</p>";
+    return;
+  }
+
+  let html = "<table><tr><th>Parcel ID</th><th>Recipient</th><th>Weight</th><th>Value</th><th>Department</th><th>Routing</th></tr>";
+  data.forEach(parcel => {
+    const highlightClass = parcel.requiresInsurance ? "highlight" : "";
+    html += `<tr class="${highlightClass}">
+      <td>${parcel.parcelId}</td>
+      <td>${parcel.recipientName}</td>
+      <td>${parcel.weight}</td>
+      <td>${parcel.value}</td>
+      <td>${parcel.department}</td>
+      <td>${parcel.routing.join(" → ")}</td>
+    </tr>`;
+  });
+  html += "</table>";
+  tableContainer.innerHTML = html;
+}
+const downloadBtn = document.getElementById("downloadBtn");
+let latestData = []; // store last uploaded JSON
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const fileInput = form.querySelector("input[type=file]");
+  const file = fileInput.files[0];
+  if (!file) return alert("Please select an XML file");
+
+  const formData = new FormData();
+  formData.append("xmlfile", file);
+
+  try {
+    const response = await fetch("http://localhost:3000/upload", {
+      method: "POST",
+      body: formData
+    });
+    const json = await response.json();
+    latestData = json; // save latest JSON
+    renderTable(json);
+    downloadBtn.style.display = "inline-block"; // show download button
+  } catch (err) {
+    console.error(err);
+    alert("Error uploading XML");
+  }
+});
+
+downloadBtn.addEventListener("click", () => {
+  if (!latestData.length) return;
+
+  // Create a new jsPDF instance
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  // Prepare table columns and rows
+  const columns = ["Parcel ID", "Recipient", "Weight", "Value", "Department", "Routing"];
+  const rows = latestData.map(parcel => [
+    parcel.parcelId,
+    parcel.recipientName,
+    parcel.weight,
+    parcel.value,
+    parcel.department,
+    parcel.routing.join(" → ")
+  ]);
+
+  // Add table to PDF
+  doc.autoTable({
+    head: [columns],
+    body: rows,
+    startY: 20,
+  });
+
+  // Add title
+  doc.setFontSize(16);
+  doc.text("Parcel Routing Report", 14, 15);
+
+  // Save PDF
+  doc.save("parcel_routes.pdf");
+});
+
+
+
+  </script>
+</body>
+</html>
