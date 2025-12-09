@@ -8,7 +8,7 @@ import { classifyParcelObj } from "./src/routing/classifier.js";
 const app = express();
 app.use(express.static("public"));
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Setup multer to store uploaded files temporarily
 const upload = multer({ dest: "uploads/" });
@@ -47,5 +47,5 @@ app.post("/upload", upload.single("xmlfile"), async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
- PORT = process.env.PORT || 3000;
+ 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
